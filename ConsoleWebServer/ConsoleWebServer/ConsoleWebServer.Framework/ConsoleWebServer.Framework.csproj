@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractClasses\AbstractHttp.cs" />
     <Compile Include="ActionInvoker.cs" />
     <Compile Include="ContentActionResultWithCors.cs" />
     <Compile Include="ContentActionResultWithCorsWithoutCaching.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Controllers\ApiController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="HighQualityCodeExamPointsProvider.cs" />
+    <Compile Include="Interfaces\IHttp.cs" />
     <Compile Include="JsonActionResult.cs" />
     <Compile Include="ContentActionResult.cs" />
     <Compile Include="JsonActionResultWithCors.cs" />

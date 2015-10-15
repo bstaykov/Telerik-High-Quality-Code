@@ -6,7 +6,10 @@
     using System.Linq;
     using System.Text;
 
-    public class HttpRequest
+    using ConsoleWebServer.Framework.AbstractClasses;
+    using ConsoleWebServer.Framework.Interfaces;
+
+    public class HttpRequest : AbstractHttp
     {
         private const string ReplacedProtocolString = "http/";
         private const string ToStringFormat = "{0} {1} {2}{3}";
@@ -25,8 +28,6 @@
             this.Action = new ActionDescriptor(uri);
         }
 
-        public IDictionary<string, ICollection<string>> Headers { get; protected set; }
-
         public string Uri { get; private set; }
 
         public string Method { get; private set; }
@@ -34,16 +35,6 @@
         public Version ProtocolVersion { get; protected set; }
 
         public ActionDescriptor Action { get; private set; }
-
-        public void AddHeader(string headerName, string headerValue)
-        {
-            if (!this.Headers.ContainsKey(headerName))
-            {
-                this.Headers.Add(headerName, new HashSet<string>(new List<string>()));
-            }
-
-            this.Headers[headerName].Add(headerValue);
-        }
 
         public override string ToString()
         {

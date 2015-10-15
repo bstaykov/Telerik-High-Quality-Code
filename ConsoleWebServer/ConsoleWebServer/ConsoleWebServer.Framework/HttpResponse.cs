@@ -6,7 +6,10 @@
     using System.Net;
     using System.Text;
 
-    public class HttpResponse
+    using ConsoleWebServer.Framework.AbstractClasses;
+    using ConsoleWebServer.Framework.Interfaces;
+
+    public class HttpResponse : AbstractHttp
     {
         private const string ServerEngineName = "ConsoleWebServer";
         private const string DefaultContentType = "text/plain; charset=utf-8";
@@ -32,8 +35,6 @@
 
         public Version ProtocolVersion { get; protected set; }
 
-        public IDictionary<string, ICollection<string>> Headers { get; protected set; }
-
         public HttpStatusCode StatusCode { get; private set; }
 
         public string Body { get; private set; }
@@ -44,16 +45,6 @@
             { 
                 return this.StatusCode.ToString(); 
             } 
-        }
-
-        public void AddHeader(string name, string value)
-        {
-            if (!this.Headers.ContainsKey(name))
-            {
-                this.Headers.Add(name, new HashSet<string>());
-            }
-
-            this.Headers[name].Add(value);
         }
 
         public override string ToString()
