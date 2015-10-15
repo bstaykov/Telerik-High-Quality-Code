@@ -1,11 +1,9 @@
 ﻿namespace ConsoleWebServer.Framework
 {
-
     using System;
     using System.IO;
     using System.Linq;
     using System.Net;
-    using str = System.String;
 
     public class StaticFileHandler
     {
@@ -21,18 +19,18 @@
 
         public HttpResponse Handle(HttpRequest request)
         {
-            str filePath = Environment.CurrentDirectory + Slash + request.Uri;
+            string filePath = Environment.CurrentDirectory + Slash + request.Uri;
             if (!this.FileExists(PathStartDirectory, filePath, 3))
             {
                 return new HttpResponse(request.ProtocolVersion, HttpStatusCode.NotFound, FileNotExistsExceptionMessage);
             }
 
-            str fileContents = File.ReadAllText(filePath);
+            string fileContents = File.ReadAllText(filePath);
             var response = new HttpResponse(request.ProtocolVersion, HttpStatusCode.OK, fileContents);
             return response;
         }
 
-        private bool FileExists(str path, str filePath, int depth)
+        private bool FileExists(string path, string filePath, int depth)
         {
             if (depth <= 0)
             {
