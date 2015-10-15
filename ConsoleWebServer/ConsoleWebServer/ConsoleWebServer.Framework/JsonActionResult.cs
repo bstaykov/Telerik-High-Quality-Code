@@ -12,14 +12,14 @@
     {
         public readonly object Model;
 
-        public JsonActionResult(HttpRequest request, object model)
+        public JsonActionResult(IProtocol protocol, object model)
         {
             this.Model = model;
-            this.Request = request;
+            this.Protocol = protocol;
             this.ResponseHeaders = new List<KeyValuePair<string, string>>();
         }
 
-        public HttpRequest Request { get; private set; }
+        public IProtocol Protocol { get; private set; }
 
         public List<KeyValuePair<string, string>> ResponseHeaders { get; private set; }
 
@@ -35,7 +35,7 @@
 
         public HttpResponse GetResponse()
         {
-            var response = new HttpResponse(this.Request.ProtocolVersion, this.GetStatusCode(), this.GetContent(), HighQualityCodeExamPointsProvider.GetContentType());
+            var response = new HttpResponse(this.Protocol.ProtocolVersion, this.GetStatusCode(), this.GetContent(), HighQualityCodeExamPointsProvider.GetContentType());
             foreach (var responseHeader in this.ResponseHeaders)
             {
                 response.AddHeader(responseHeader.Key, responseHeader.Value);

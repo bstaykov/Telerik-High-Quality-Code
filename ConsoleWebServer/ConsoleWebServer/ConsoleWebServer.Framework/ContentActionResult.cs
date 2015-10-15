@@ -11,20 +11,20 @@
         private const string ContentType = "text/plain; charset=utf-8";
         private readonly object model;
 
-        public ContentActionResult(HttpRequest httpRequest, object model)
+        public ContentActionResult(IProtocol protocol, object model)
         {
             this.model = model;
-            this.Request = httpRequest;
+            this.Protocol = protocol;
             this.ResponseHeaders = new List<KeyValuePair<string, string>>();
         }
 
-        public HttpRequest Request { get; private set; }
+        public IProtocol Protocol { get; private set; }
 
         public List<KeyValuePair<string, string>> ResponseHeaders { get; private set; }
 
         public HttpResponse GetResponse()
         {
-            var response = new HttpResponse(this.Request.ProtocolVersion, HttpStatusCode.OK, this.model.ToString(), ContentType);
+            var response = new HttpResponse(this.Protocol.ProtocolVersion, HttpStatusCode.OK, this.model.ToString(), ContentType);
             foreach (var responseHeader in this.ResponseHeaders) 
             {
                 response.AddHeader(responseHeader.Key, responseHeader.Value); 

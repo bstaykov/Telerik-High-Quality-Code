@@ -78,6 +78,7 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="HighQualityCodeExamPointsProvider.cs" />
     <Compile Include="Interfaces\IHttp.cs" />
+    <Compile Include="Interfaces\IProtocol.cs" />
     <Compile Include="JsonActionResult.cs" />
     <Compile Include="ContentActionResult.cs" />
     <Compile Include="JsonActionResultWithCors.cs" />

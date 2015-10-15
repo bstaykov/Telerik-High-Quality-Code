@@ -9,7 +9,7 @@
     using ConsoleWebServer.Framework.AbstractClasses;
     using ConsoleWebServer.Framework.Interfaces;
 
-    public class HttpRequest : AbstractHttp
+    public class HttpRequest : AbstractHttp, IProtocol
     {
         private const string ReplacedProtocolString = "http/";
         private const string ToStringFormat = "{0} {1} {2}{3}";
