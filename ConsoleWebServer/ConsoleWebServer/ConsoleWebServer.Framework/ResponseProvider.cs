@@ -6,6 +6,7 @@ namespace ConsoleWebServer.Framework
     using System.Reflection;
 
     using ConsoleWebServer.Framework.Controllers;
+    using ConsoleWebServer.Framework.Exceptions;
     using ConsoleWebServer.Framework.Interfaces;
 
     public class ResponseProvider

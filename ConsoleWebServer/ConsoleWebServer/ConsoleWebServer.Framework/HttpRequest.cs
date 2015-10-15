@@ -7,6 +7,7 @@
     using System.Text;
 
     using ConsoleWebServer.Framework.AbstractClasses;
+    using ConsoleWebServer.Framework.Exceptions;
     using ConsoleWebServer.Framework.Interfaces;
 
     public class HttpRequest : AbstractHttp, IProtocol

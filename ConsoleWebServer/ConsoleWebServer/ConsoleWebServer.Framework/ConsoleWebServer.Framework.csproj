@@ -85,9 +85,9 @@
     <Compile Include="JsonActionResultWithCorsWithoutCaching.cs" />
     <Compile Include="JsonActionResultWithoutCaching.cs" />
     <Compile Include="NewActionInvoker.cs" />
-    <Compile Include="ParserException.cs" />
+    <Compile Include="Exceptions\ParserException.cs" />
     <Compile Include="StaticFileHandler.cs" />
-    <Compile Include="HttpNotFound.cs" />
+    <Compile Include="Exceptions\HttpNotFound.cs" />
     <Compile Include="HttpRequest.cs" />
     <Compile Include="Controllers\Controller.cs" />
     <Compile Include="HttpResponse.cs" />

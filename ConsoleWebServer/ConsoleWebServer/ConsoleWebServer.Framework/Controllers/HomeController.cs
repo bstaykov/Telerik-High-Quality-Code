@@ -9,16 +9,16 @@
         private const string LivePageNoCachingAndCorsMessage = "Live page with no caching and CORS";
         private const string CorsSettings = "*";
 
-        public HomeController(HttpRequest request) 
-            : base(request) 
+        public HomeController(HttpRequest request)
+            : base(request)
         {
         }
 
-        // TODO delete
-        // public IActionResult Index(string param)
-        // {
-        // return this.Content("Home page :)");
-        // }
+        public IActionResult Index(string param)
+        {
+            return this.Content("Home page :)");
+        }
+
         public IActionResult LivePage(string param)
         {
             return new ContentActionResultWithoutCaching(this.Request, LivePageMessage);
