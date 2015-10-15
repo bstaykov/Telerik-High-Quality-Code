@@ -1,0 +1,78 @@
+Design pattern: Factory Method
+	
+* 
+
+
+
+Design pattern: Strategy
+	
+*
+ 
+
+
+Design pattern: Template Method
+	
+* 
+	
+*
+ 
+
+
+Design pattern: Chain of Responsibility
+	
+*
+ 
+
+
+Design pattern: Decorator
+	
+*
+ 
+
+
+Found bugs:
+	
+* 
+	Missing ';' in Startup class in Main method
+* 
+	invalid argument "int a" in main method
+*
+ 
+
+
+Found bottleneck:
+	
+* removed .ToList().AsEnumerable().AsQueryable().ToArray() from Uri split and erase same separators too
+* in Http constructor remove "HHTP/.ToLower()" with "hhtp/"
+* Separated ParserException from HttpNotFound
+
+ 
+
+
+Single responsibility principle
+	
+*
+ 
+
+
+Open/closed principle
+	
+*
+ 
+
+
+Liskov substitution principle
+	
+*
+ 
+
+
+Interface segregation principle
+	
+*
+ 
+
+
+Dependency inversion principle
+	
+* 
