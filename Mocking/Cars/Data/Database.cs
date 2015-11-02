@@ -1,8 +1,8 @@
 ﻿namespace Cars
 {
+    using System.Collections.Generic;
     using Cars.Contracts;
     using Cars.Models;
-    using System.Collections.Generic;
 
     public class Database : IDatabase
     {

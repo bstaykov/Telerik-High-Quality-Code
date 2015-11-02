@@ -19,8 +19,6 @@
             this.Data = database;
         }
 
-        protected IDatabase Data { get; set; }
-
         public int TotalCars
         {
             get
@@ -28,6 +26,8 @@
                 return this.Data.Cars.Count;
             }
         }
+
+        protected IDatabase Data { get; set; }
 
         public void Add(Car car)
         {

@@ -76,8 +76,10 @@
 
             switch (parameter)
             {
-                case "make": result = this.carsData.SortedByMake(); break;
-                case "year": result = this.carsData.SortedByYear(); break;
+                case "make": result = this.carsData.SortedByMake(); 
+                    break;
+                case "year": result = this.carsData.SortedByYear(); 
+                    break;
                 default: throw new ArgumentException("Invalid sorting parameter");
             }
 

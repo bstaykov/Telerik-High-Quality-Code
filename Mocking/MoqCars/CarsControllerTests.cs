@@ -3,11 +3,11 @@
     using System;
     using System.Collections.Generic;
 
-    using Microsoft.VisualStudio.TestTools.UnitTesting;
-
     using Cars.Contracts;
     using Cars.Controllers;
     using Cars.Models;
+
+    using Microsoft.VisualStudio.TestTools.UnitTesting;
     using Mocks;
     
     [TestClass]
@@ -62,7 +62,7 @@
             var car = new Car
             {
                 Id = 15,
-                Make = "",
+                Make = string.Empty,
                 Model = "330d",
                 Year = 2014
             };
@@ -78,7 +78,7 @@
             {
                 Id = 15,
                 Make = "BMW",
-                Model = "",
+                Model = string.Empty,
                 Year = 2014
             };
 

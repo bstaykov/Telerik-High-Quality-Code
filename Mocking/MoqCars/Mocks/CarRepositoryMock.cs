@@ -1,8 +1,8 @@
 ﻿namespace MoqCars.Mocks
 {
+    using System.Collections.Generic;
     using Cars.Contracts;
     using Cars.Models;
-    using System.Collections.Generic;
 
     public abstract class CarRepositoryMock : ICarsRepositoryMock
     {
@@ -16,6 +16,8 @@
 
         protected ICollection<Car> FakeCarCollection { get; private set; }
 
+        protected abstract void ArrangeCarsRepositoryMock();
+
         private void PopulateFakeData()
         {
             this.FakeCarCollection = new List<Car>
@@ -26,7 +28,5 @@
                 new Car { Id = 4, Make = "Opel", Model = "Astra", Year = 2010 },
             };
         }
-
-        protected abstract void ArrangeCarsRepositoryMock();
     }
 }

@@ -1,9 +1,9 @@
 ﻿namespace MoqCars.Mocks
 {
+    using System.Linq;
     using Cars.Contracts;
     using Cars.Models;
     using Moq;
-    using System.Linq;
 
     public class MoqCarsRepository : CarRepositoryMock, ICarsRepositoryMock
     {

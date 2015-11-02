@@ -1,7 +1,7 @@
 ﻿namespace Cars.Contracts
 {
-    using Cars.Models;
     using System.Collections.Generic;
+    using Cars.Models;
 
     public interface IDatabase
     {
