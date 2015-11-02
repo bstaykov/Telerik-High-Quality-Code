@@ -9,6 +9,7 @@
     public class Validator : IValidator
     {
         private object validatableObject;
+
         private bool? isObjectValidated;
         private IDictionary<string, IList<string>> errors;
 
