@@ -55,6 +55,7 @@
   </Choose>
   <ItemGroup>
     <Compile Include="ActionDecriptorTest.cs" />
+    <Compile Include="ApiControllerReturnMe.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

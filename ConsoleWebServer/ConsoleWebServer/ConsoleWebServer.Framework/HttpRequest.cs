@@ -17,7 +17,8 @@
         private const string ToStringProtocol = "HTTP/";
         private const string ToStringLineFormat = "{0}: {1}";
         private const string JoinSeparator = "; ";
-        private const char HeaderSeparator = ':';
+        private const char DotsSeparator = ':';
+        private const char SpaceSeparator = ' ';
         private const string InvalidParserExceptionMessage = "Invalid format for the first request line. Expected format: [Method] [Uri] HTTP/[Version]";
 
         public HttpRequest(string method, string uri, string httpVersion)
@@ -84,9 +85,9 @@
 
         private void AddHeaderToRequest(HttpRequest httpRequest, string headerLine)
         {
-            var lines = headerLine.Split(new[] { HeaderSeparator }, 2, StringSplitOptions.RemoveEmptyEntries);
-            var headerName = lines[0].Trim();
-            var headerValue = lines.Length == 2 ? lines[1].Trim() : string.Empty;
+            var lines = headerLine.Split(new[] { DotsSeparator, SpaceSeparator }, 2, StringSplitOptions.RemoveEmptyEntries);
+            var headerName = lines[0];
+            var headerValue = lines.Length == 2 ? lines[1] : string.Empty;
             httpRequest.AddHeader(headerName, headerValue);
         }
     }

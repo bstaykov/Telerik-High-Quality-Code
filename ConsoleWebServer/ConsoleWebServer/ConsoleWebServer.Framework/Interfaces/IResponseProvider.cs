@@ -6,7 +6,7 @@
     public interface IResponseProvider
     {
         /// <summary>
-        /// Returns HttpResponce base on the provider
+        /// Returns HttpResponce base on the provider's request string
         /// </summary>
         /// <param name="requestAsString">the request string</param>
         /// <returns></returns>

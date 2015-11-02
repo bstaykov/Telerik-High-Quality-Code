@@ -9,7 +9,7 @@
     public class ApiController : Controller
     {
         private const string RefererKey = "Referer";
-        private const string InvalidRefererMessage = "Invalid referer!";
+        private const string InvalidRefererOrDomainMessage = "Invalid referer or invalid domain!";
         private const string DateFormat = "yyyy-MM-dd";
         private const string InfoStartWith = "Data available for ";
 
@@ -18,7 +18,7 @@
         {
         }
 
-        public IActionResult ReturnAsJson(string param)
+        public IActionResult ReturnMe(string param)
         {
             return this.Json(new { param = param });
         }
@@ -33,7 +33,7 @@
 
             if (string.IsNullOrWhiteSpace(requestReferer) || !requestReferer.Contains(domainName))
             {
-                throw new ArgumentException(InvalidRefererMessage);
+                throw new ArgumentException(InvalidRefererOrDomainMessage);
             }
 
             return new JsonActionResultWithCors(this.Request, new { date = DateTime.Now.ToString(DateFormat), moreInfo = InfoStartWith + domainName }, domainName);

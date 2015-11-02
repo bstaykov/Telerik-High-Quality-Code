@@ -2,7 +2,7 @@
 {
     public class GarageInc : AlcoholFactory
     {
-        private const string Name = string.Empty;
+        private const string Name = "Baj Ivan v garaja na selo!";
 
         public override Beer MakeBeer()
         {

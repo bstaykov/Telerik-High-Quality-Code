@@ -9,6 +9,7 @@
     public class HighQualityCodeExamPointsProvider
     {
         private const string ContentType = "application/json";
+        private const int MyPoints = 0;
 
         public static string GetContentType()
         {
@@ -17,7 +18,7 @@
 
         public int GetMyPoints()
         {
-            return 0;
+            return MyPoints;
         }
     }
 }
